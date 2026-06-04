@@ -1,0 +1,63 @@
+BET SIZE AND PERFORMANCE STATISTICAL ANALYSIS
+
+Sample
+------
+Trades: 1,988
+Markets: 277
+Wallets: 1,109
+Wins: 52
+Win rate: 2.616%
+Filter: $1,000+ bets with prices from 1% to below 10%
+
+Data limitation
+---------------
+Liquidity is missing for nearly all trades, so log market volume is used as the
+available market-scale control. Statistical association is not proof of insider
+information.
+
+Unadjusted return relationship
+------------------------------
+Spearman correlation, log2 bet size versus net ROI: 0.028514
+Naive Spearman p-value: 0.203790
+
+Primary logistic regression, standard errors clustered by market
+----------------------------------------------------------------
+log2 bet-size coefficient: 0.093193
+Clustered standard error: 0.270511
+p-value: 0.730465
+Odds ratio for each doubling of bet size: 1.097674
+95% odds-ratio CI: [0.645972, 1.865232]
+
+Wallet-clustered robustness check
+---------------------------------
+log2 bet-size coefficient: 0.093193
+p-value: 0.694789
+
+Within-market fixed-effects linear probability model
+----------------------------------------------------
+Change in win probability per doubling of bet size: 0.001653
+Market-clustered standard error: 0.002370
+p-value: 0.485364
+
+Within-market permutation test
+------------------------------
+Usable trades: 75
+Usable markets: 4
+Observed within-market slope: 0.076292
+Two-sided permutation p-value (5,000 permutations): 0.080584
+
+Interpretation rule
+-------------------
+A positive log2 bet-size coefficient with a small p-value would support the
+claim that larger bets perform better after controls. It would not establish
+that private or insider information caused the relationship.
+
+Size quintiles
+--------------
+               trades  median_bet_usd  mean_price  win_rate  mean_net_roi
+size_quintile                                                            
+Q1                398         1006.28    0.047440  0.017588     -0.775894
+Q2                404         1225.18    0.051394  0.029703     -0.618667
+Q3                391         1600.00    0.051238  0.028133     -0.642592
+Q4                397         2198.79    0.051958  0.025189     -0.700450
+Q5                398         4303.15    0.053187  0.030151     -0.560851
