@@ -1,4 +1,4 @@
-# BEM Final
+# Hedge-Fund-Project
 
 Analysis of unusual Polymarket bets, including equal-weighting, bet-size robustness, and tail-risk figures.
 
